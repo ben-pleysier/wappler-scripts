@@ -1,0 +1,12 @@
+$(function() {
+  $( "#record" ).sortable({cursor: "move"},{revert:true},{scroll:true},{scrollSensitivity: 10},{tolerance: "pointer"});
+  $( "#record" ).disableSelection();
+  $( "#record" ).sortable({
+    update: function( event, ui ) {
+      var listItems = $('#record div');
+      listItems.each(function(idx) {
+        $(this).find('.cos').val(idx+1);
+      });
+    }
+  });
+});
